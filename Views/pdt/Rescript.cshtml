@@ -1,0 +1,39 @@
+﻿@model MediatorCrud.Rqsts.Rescriptcmnd
+
+@{
+	ViewData["Title"] = "Update Product";
+}
+<h2>Update Product</h2>
+
+<form asp-action="Rescript" method="post">
+	<div class="mb-3">
+		<label asp-for="rescriptname">Name</label>
+		<input asp-for="rescriptname" class="form-control" />
+		<span asp-validation-for="rescriptname"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="rescriptprice">Price</label>
+		<input asp-for="rescriptprice" class="form-control" />
+		<span asp-validation-for="rescriptprice"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="rescriptstock">Stock</label>
+		<input asp-for="rescriptstock" class="form-control" />
+		<span asp-validation-for="rescriptstock"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="rescriptdescr">Name</label>
+        <textarea asp-for="rescriptdescr" class="form-control">Description
+		</textarea>		<span asp-validation-for="rescriptdescr"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="ctrId">Category</label>
+		<select asp-for="ctrId" class="form-control" asp-items="ViewBag.ctgrs">
+			<option value="">--Select Value--</option>
+		</select>
+		</div>
+
+	<button class="btn btn-primary" type="submit">Update</button>
+	<a asp-action="GrabAll" class="btn btn-secondary">Cancel</a>
+
+</form>

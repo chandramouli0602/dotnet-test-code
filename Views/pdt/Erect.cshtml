@@ -1,0 +1,43 @@
+﻿@model MediatorCrud.Rqsts.Erectpdtcmnd
+
+@{
+	ViewData["Title"] = "Create Product";
+}
+<h2>Create product</h2>
+
+<form asp-action="Erect" method="post">
+	<div class="mb-3">
+		<label asp-for="Pdterectname">Name</label>
+		<input asp-for="Pdterectname" class="form-control" />
+		<span asp-validation-for="Pdterectname" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="Pdterectprice">Price</label>
+		<input asp-for="Pdterectprice" class="form-control" />
+		<span asp-validation-for="Pdterectprice" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="Pdterectstock">Stock</label>
+		<input asp-for="Pdterectstock" class="form-control" />
+		<span asp-validation-for="Pdterectstock" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="Pdterectdescr">Description</label>
+		<textarea asp-for="Pdterectdescr" class="form-control">Description
+		</textarea>
+		<span asp-validation-for="Pdterectdescr" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="ctgrId">Category</label>
+		<select asp-for="ctgrId" class="form-control" asp-items="ViewBag.ctgrs">
+			<option value="">--Select Value--</option>
+		</select>
+
+	</div>
+	<button class="btn btn-primary" type="submit">Save</button>
+	<a asp-action="GrabAll" class="btn btn-secondary">Cancel</a>
+</form>
